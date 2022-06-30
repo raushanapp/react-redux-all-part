@@ -9,7 +9,7 @@ function BooksList() {
     const [searchParams] = useSearchParams()
     const location = useLocation()
     const dispatch= useDispatch()
-    const books = useSelector((state)=>state.books)
+    const books = useSelector((state)=>state.books.books)
     // console.log("books:",books)
     useEffect(()=>{
       if(books.length=== 0 || location.search){
@@ -22,7 +22,7 @@ function BooksList() {
         };
         dispatch(getBooks(getBooksParams))
       }
-    },[location.search]);
+    },[books.length, dispatch, location.search, searchParams]);
     // console.log(location)
   return (
     <>

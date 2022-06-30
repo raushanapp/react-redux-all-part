@@ -6,7 +6,7 @@ const initalState = {
     isError:false
 }
 
-export const reducer = (state=initalState,{type,payload})=>{
+export const reducerFirst = (state=initalState,{type,payload})=>{
     switch(type) {
         case GET_BOOKS_LOADING :{
             return {

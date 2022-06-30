@@ -5,7 +5,7 @@ import { getBooks } from '../ReduxStore/firstStore/action.first'
 function SingleBooks() {
   const {id} =useParams()
   const disptach = useDispatch()
-  const books= useSelector((state)=>state.books)
+  const books= useSelector((state)=>state.books.books)
   const [currentBooks,setCurrentBooks] =useState({})
   console.log(id)
    useEffect(()=>{
