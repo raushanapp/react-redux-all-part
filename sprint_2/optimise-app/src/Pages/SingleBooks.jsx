@@ -16,6 +16,7 @@ function SingleBooks() {
   useEffect(()=>{
      if(id){
        const temp =books?.find((books)=>books.id===Number(id))
+       
        temp && setCurrentBooks(temp);
      }
   },[books,id])

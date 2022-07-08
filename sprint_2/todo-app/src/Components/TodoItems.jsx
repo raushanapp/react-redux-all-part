@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
  const delay =(ms)=>{
     const start = Date.now()
     while(Date.now-start<ms){
@@ -7,7 +7,7 @@ import React from 'react'
     return true
  }
 function TodoItems({id,title,status,toggleStatus,itemsDelete}) {
-  const isDelay = delay(200)
+  const isDelay =useMemo (()=>delay(200),[])    //synchronous delay
   return (
     <div style={{display:"flex",justifyContent:"c",margin:"1rem 0"}}>
         
@@ -31,4 +31,4 @@ function TodoItems({id,title,status,toggleStatus,itemsDelete}) {
 //   return false
 // }
 
-export default React.memo(TodoItems)
+export default TodoItems
